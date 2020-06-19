@@ -11,7 +11,15 @@
         android:layout_width="match_parent"
         android:orientation="vertical"
         android:layout_height="match_parent">
-    <EditText
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:id="@+id/img_logo2"
+            android:src="@drawable/ic_logo"
+            android:layout_marginTop="30dp"
+            android:layout_gravity="center_horizontal"
+            />
+        <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/c_name"
@@ -19,7 +27,7 @@
         android:layout_marginHorizontal="30dp"
         android:background="@color/OffWhite"
         android:padding="15dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="50dp"
         />
 
 

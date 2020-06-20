@@ -40,11 +40,11 @@ CircleImageView circleImageView =  rootview.findViewById(R.id.profile_image) ;
 
         })
                );
-        SharedPreferences sharedPreferences = getActivity().getSharedPreferences("MyApplication345", Context.MODE_PRIVATE);
+       SharedPreferences sharedPreferences = getActivity().getSharedPreferences("MyApplication345", Context.MODE_PRIVATE);
         String profile_fname = sharedPreferences.getString("User_uname","");
         String profile_emaild1 = sharedPreferences.getString("User_email1","");
         String profile_contact_no = sharedPreferences.getString("User_contact_no","");
-        String profile_password = sharedPreferences.getString("User_password","");
+      //  String profile_password = sharedPreferences.getString("User_password","");
         String profile_addr = sharedPreferences.getString("User_addr","");
         String profile_city = sharedPreferences.getString("User_city","");
 
@@ -52,7 +52,7 @@ CircleImageView circleImageView =  rootview.findViewById(R.id.profile_image) ;
         TextView Pr_uname = rootview.findViewById(R.id.profile_uname);
         TextView Pr_email = rootview.findViewById(R.id.profile_emailid);
         TextView Pr_contact_no = rootview.findViewById(R.id.profile_contact_no);
-        TextView Pr_password = rootview.findViewById(R.id.profile_password);
+       // TextView Pr_password = rootview.findViewById(R.id.profile_password);
         TextView Pr_addr = rootview.findViewById(R.id.profile_addr);
         TextView Pr_city = rootview.findViewById(R.id.profile_city);
 
@@ -60,7 +60,7 @@ CircleImageView circleImageView =  rootview.findViewById(R.id.profile_image) ;
         Pr_uname.setText(profile_fname);
         Pr_email.setText(profile_emaild1);
         Pr_contact_no.setText(profile_contact_no);
-        Pr_password.setText(profile_password);
+       // Pr_password.setText(profile_password);
         Pr_addr.setText(profile_addr);
         Pr_city.setText(profile_city);
 

@@ -78,25 +78,14 @@ public class LoginActivity extends AppCompatActivity {
 
 
 
-
-                    SharedPreferences sharedPreferences = getSharedPreferences("MyApplication345",Context.MODE_PRIVATE);
-
-                    SharedPreferences.Editor editor = sharedPreferences.edit();
-                    editor.putString("User_email",struname);
-
-                    editor.commit();
-
-                    Intent i = new Intent(LoginActivity.this, NavMain.class);
-                    startActivity(i);
-
-                    finish();
+ /**/
 
 
 
 
 
-                    startActivity(new Intent(LoginActivity.this,NavMain.class));
-                    Toast.makeText(LoginActivity.this, "Logged in successfully", Toast.LENGTH_SHORT).show();
+                    /*startActivity(new Intent(LoginActivity.this,NavMain.class));
+                    Toast.makeText(LoginActivity.this, "Logged in successfully", Toast.LENGTH_SHORT).show();*/
 
 
                 }
@@ -118,37 +107,38 @@ public class LoginActivity extends AppCompatActivity {
                         Log.e("TAG", "onResponse: "+response );
                         try {
                             JSONObject jsonObject = new JSONObject(response);
-                            final String strPath = jsonObject.getString("picurl");
+                            JSONObject dataObject = jsonObject.getJSONObject("data");
+                            String userId = dataObject.getString("userId");
+                            String roleId = dataObject.getString("roleId");
+                            String userName = dataObject.getString("userName");
+                            String address = dataObject.getString("address");
+                            String city = dataObject.getString("city");
+                            String emailId = dataObject.getString("emailId");
+                            String phone = dataObject.getString("phone");
+                            SharedPreferences sharedPreferences = getSharedPreferences("MyApplication345", Context.MODE_PRIVATE);
 
-                            byte[] bytes = Base64.decode(strPath, Base64.DEFAULT);
+                            SharedPreferences.Editor editor = sharedPreferences.edit();
+                            editor.putString("User_uname", userName);
+                            editor.putString("User_email1", emailId);
+                            editor.putString("User_contact_no", phone);
+                            editor.putString("User_addr", address);
+                            editor.putString("User_city", city);
+                            editor.commit();
 
-                            Bitmap bitmap = BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
+                            Intent i = new Intent(LoginActivity.this, NavMain.class);
+                            startActivity(i);
 
-                            // imgDp1.setImageBitmap(bitmap);
-
-                              //  dataDisplay(strPath);
-
-
-                           /* runOnUiThread(new Runnable() {
-                                @Override
-                                public void run() {
-
-
-                                     i = new Intent(LoginActivity.this,ImageDisplayActivity.class);
-                                    i.putExtra("IMAGE_PATH",strPath);
-                                    startActivity(i);
-                                }
-                            }*/
+                            finish();
 
 
 
-                            // tvName.setText(strName);
+
 
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
 
-                          Toast.makeText(LoginActivity.this, ""+response, Toast.LENGTH_SHORT).show();
+                          //Toast.makeText(LoginActivity.this, ""+response, Toast.LENGTH_SHORT).show();
 
                     }
                 }, new Response.ErrorListener() {

@@ -94,10 +94,9 @@ public class Signup_user extends AppCompatActivity {
                 } else if (strphone.length() < 10) {
                     Toast.makeText(Signup_user.this, "Enter Valid Phone Number", Toast.LENGTH_SHORT).show();
                 }
-                    else if (!strphone.matches(num)) {
-                        Toast.makeText(Signup_user.this, "Enter Valid Phone Number", Toast.LENGTH_SHORT).show();
 
-                    } else if (strpasswd.equals("")) {
+
+                     else if (strpasswd.equals("")) {
                     Toast.makeText(Signup_user.this, "Enter Password", Toast.LENGTH_SHORT).show();
 
                 } else if (straddr.equals("")) {
@@ -108,25 +107,6 @@ public class Signup_user extends AppCompatActivity {
 
                 } else {
                     loadUrlData(struname, stremailid, strpasswd, strphone, straddr, strcity, strroleid);
-                    Toast.makeText(Signup_user.this, "Signed up Successfully", Toast.LENGTH_SHORT).show();
-                    startActivity(new Intent(Signup_user.this, NavMain.class));
-
-                    SharedPreferences sharedPreferences = getSharedPreferences("MyApplication345", Context.MODE_PRIVATE);
-
-                    SharedPreferences.Editor editor = sharedPreferences.edit();
-                    editor.putString("User_uname", struname);
-                    editor.putString("User_email1", stremailid);
-
-                    editor.putString("User_contact_no", strphone);
-                    editor.putString("User_password", strpasswd);
-                    editor.putString("User_addr", straddr);
-                    editor.putString("User_city", strcity);
-                    editor.commit();
-
-                    Intent i = new Intent(Signup_user.this, LoginActivity.class);
-                    startActivity(i);
-
-                    finish();
 
 
                 }
@@ -134,7 +114,7 @@ public class Signup_user extends AppCompatActivity {
 
             }
 
-            private void loadUrlData(final String struname, final String stremailid, final String strpassswd, final String strphone, final String straddr, final String strcity, final String strroleid) {
+            private void loadUrlData(final String struname, final String stremailid, final String strpasswd, final String strphone, final String straddr, final String strcity, final String strroleid) {
                 final ProgressDialog progressDialog = new ProgressDialog(Signup_user.this);
                 progressDialog.setMessage("Loading");
                 progressDialog.show();
@@ -147,15 +127,30 @@ public class Signup_user extends AppCompatActivity {
                         Log.e("TAG", "onResponse: " + response);
                         try {
                             JSONObject jsonObject = new JSONObject(response);
-                            final String strPath = jsonObject.getString("picurl");
 
 
-                            SharedPreferences sharedPreferences = getSharedPreferences("MyApplication345", Context.MODE_PRIVATE);
 
+                            Toast.makeText(Signup_user.this, "Signed up Successfully", Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(Signup_user.this, LoginActivity.class));
 
-                            byte[] bytes = Base64.decode(strPath, Base64.DEFAULT);
+                            /*SharedPreferences sharedPreferences = getSharedPreferences("MyApplication345", Context.MODE_PRIVATE);
 
-                            Bitmap bitmap = BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
+                            SharedPreferences.Editor editor = sharedPreferences.edit();
+                            editor.putString("User_uname", struname);
+                            editor.putString("User_email1", stremailid);
+
+                            editor.putString("User_contact_no", strphone);
+                            editor.putString("User_password", strpasswd);
+                            editor.putString("User_addr", straddr);
+                            editor.putString("User_city", strcity);
+                            editor.commit();
+
+                            Intent i = new Intent(Signup_user.this, LoginActivity.class);
+                            startActivity(i);
+
+                            finish();
+*/
+
 
                             // imgDp1.setImageBitmap(bitmap);
 
@@ -195,7 +190,7 @@ public class Signup_user extends AppCompatActivity {
                         Map<String, String> params = new HashMap<String, String>();
                         params.put("userName", struname);
                         params.put("emailId", stremailid);
-                        params.put("password", strpassswd);
+                        params.put("password", strpasswd);
                         params.put("phone", strphone);
                         params.put("address", straddr);
                         params.put("city", strcity);

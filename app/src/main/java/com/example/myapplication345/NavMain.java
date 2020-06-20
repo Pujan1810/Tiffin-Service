@@ -64,8 +64,8 @@ public class NavMain extends AppCompatActivity implements NavigationView.OnNavig
                 /*CircleImageView circleImageView =  navView.findViewById(R.id.profile_image) ;
                 circleImageView.setImageResource(R.drawable.ic_profile_default);*/
         SharedPreferences sharedPreferences = getSharedPreferences("MyApplication345",MODE_PRIVATE);
-        String strUser = sharedPreferences.getString("User_email","");
-        String strUname = sharedPreferences.getString("User_Uname","");
+        String strUser = sharedPreferences.getString("User_email1","");
+        String strUname = sharedPreferences.getString("User_uname","");
 
         TextView tvUseremail = navView.findViewById(R.id.textView2);
         TextView tvUserUname = navView.findViewById(R.id.textView1);

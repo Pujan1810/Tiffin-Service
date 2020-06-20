@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -36,7 +37,7 @@ public class MyBaseAdapter extends BaseAdapter {
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public View getView(final int position, View convertView, ViewGroup parent) {
 
         LayoutInflater layoutInflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
@@ -49,7 +50,13 @@ public class MyBaseAdapter extends BaseAdapter {
         tvData.setText(dataModelArrayList.get(position).getStrLang());
         imgData.setImageResource(dataModelArrayList.get(position).getImgLang());
 
-
+        convertView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String strData = dataModelArrayList.get(position).getStrLang();
+                Toast.makeText(context, ""+strData, Toast.LENGTH_SHORT).show();
+            }
+        });
         return convertView;
     }
 }

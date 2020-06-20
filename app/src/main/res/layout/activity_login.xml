@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ffffff"
+    android:background="@drawable/gradient"
     tools:context=".LoginActivity">
     <LinearLayout
         android:layout_width="match_parent"
@@ -16,7 +16,7 @@
         android:layout_height="250dp"
         android:id="@+id/img_logo"
         android:src="@drawable/ic_logo"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="20dp"
         android:layout_centerHorizontal="true"
         />
     <EditText
@@ -28,7 +28,7 @@
         android:background="@color/OffWhite"
         android:layout_below="@+id/img_logo"
         android:imeOptions="actionNext"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="60dp"
         android:inputType="textEmailAddress"
         android:layout_marginHorizontal="40dp"
         android:drawableRight="@drawable/ic_person"/>

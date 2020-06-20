@@ -3,7 +3,7 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
     style="@style/AppTheme.AppBarOverlay"
-
+    android:background="@drawable/gradient"
 
     >
    <de.hdodenhof.circleimageview.CircleImageView
@@ -11,7 +11,7 @@
         android:id="@+id/profile_image"
         android:layout_width="96dp"
         android:layout_height="96dp"
-        android:src="@drawable/ic_profile_default"
+        android:src="@drawable/tiffin_bg"
         android:layout_gravity="center"
         app:civ_border_width="4dp"
        android:layout_marginTop="20dp"
@@ -20,17 +20,17 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:layout_marginLeft="30dp"
-
+        android:layout_marginHorizontal="20dp"
+        android:fontFamily="sans-serif-condensed-medium"
         android:text="Username"
-        android:textSize="10sp"
-        android:textColor="@color/colorPrimary"/>
+        android:textSize="20sp"
+        android:textColor="@color/DarkBlue"/>
     <TextView
-        android:layout_width="350dp"
+        android:layout_width="match_parent"
         android:layout_height="30dp"
         android:id="@+id/profile_uname"
         android:outlineSpotShadowColor="@color/colorPrimary"
-        android:layout_marginLeft="30dp"
+        android:layout_marginHorizontal="20dp"
         android:background="@color/OffWhite"
         android:textSize="20sp"
         android:textColor="#000000"/>
@@ -39,32 +39,35 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:layout_marginLeft="30dp"
+        android:layout_marginHorizontal="20dp"
+        android:fontFamily="sans-serif-condensed-medium"
         android:text="Email"
-        android:textSize="10sp"
-        android:textColor="@color/colorPrimary"/>
+        android:textSize="20sp"
+        android:textColor="@color/DarkBlue"/>
     <TextView
-        android:layout_width="350dp"
+        android:layout_width="match_parent"
         android:layout_height="30dp"
         android:id="@+id/profile_emailid"
-        android:layout_marginLeft="30dp"
+        android:layout_marginHorizontal="20dp"
         android:background="@color/OffWhite"
         android:textSize="20sp"
         android:textColor="#000000"/>
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:layout_marginLeft="30dp"
+        android:layout_marginHorizontal="20dp"
         android:text="Contact No"
-        android:textSize="10sp"
-        android:textColor="@color/colorPrimary"/>
+        android:fontFamily="sans-serif-condensed-medium"
+        android:textSize="20sp"
+        android:textColor="@color/DarkBlue"/>
     <TextView
-        android:layout_width="350dp"
+        android:layout_width="match_parent"
         android:layout_height="30dp"
         android:id="@+id/profile_contact_no"
         android:outlineSpotShadowColor="@color/colorPrimary"
-        android:layout_marginLeft="30dp"
+        android:layout_marginHorizontal="20dp"
         android:background="@color/OffWhite"
         android:textSize="20sp"
         android:textColor="#000000"/>
@@ -73,16 +76,17 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:layout_marginLeft="30dp"
+        android:layout_marginHorizontal="20dp"
         android:text="Password"
-        android:textSize="10sp"
-        android:textColor="@color/colorPrimary"/>
+        android:fontFamily="sans-serif-condensed-medium"
+        android:textSize="20sp"
+        android:textColor="@color/DarkBlue"/>
     <TextView
-        android:layout_width="350dp"
+        android:layout_width="match_parent"
         android:layout_height="30dp"
         android:id="@+id/profile_password"
         android:outlineSpotShadowColor="@color/colorPrimary"
-        android:layout_marginLeft="30dp"
+        android:layout_marginHorizontal="20dp"
         android:background="@color/OffWhite"
         android:textSize="20sp"
         android:inputType="textPassword"
@@ -92,16 +96,17 @@
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:layout_marginTop="20dp"
-      android:layout_marginLeft="30dp"
+      android:layout_marginHorizontal="20dp"
       android:text="Address"
-      android:textSize="10sp"
-      android:textColor="@color/colorPrimary"/>
+      android:fontFamily="sans-serif-condensed-medium"
+      android:textSize="20sp"
+      android:textColor="@color/DarkBlue"/>
   <TextView
-      android:layout_width="350dp"
-      android:layout_height="30dp"
+      android:layout_width="match_parent"
+      android:layout_height="50dp"
       android:id="@+id/profile_addr"
       android:outlineSpotShadowColor="@color/colorPrimary"
-      android:layout_marginLeft="30dp"
+      android:layout_marginHorizontal="20dp"
       android:background="@color/OffWhite"
       android:textSize="20sp"
       android:textColor="#000000"/>
@@ -110,27 +115,31 @@
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:layout_marginTop="20dp"
-      android:layout_marginLeft="30dp"
+      android:layout_marginHorizontal="20dp"
       android:text="City"
-      android:textSize="10sp"
-      android:textColor="@color/colorPrimary"/>
+      android:fontFamily="sans-serif-condensed-medium"
+      android:textSize="20sp"
+      android:textColor="@color/DarkBlue"/>
   <TextView
-      android:layout_width="350dp"
+      android:layout_width="match_parent"
       android:layout_height="30dp"
       android:id="@+id/profile_city"
       android:outlineSpotShadowColor="@color/colorPrimary"
-      android:layout_marginLeft="30dp"
+      android:layout_marginHorizontal="20dp"
       android:background="@color/OffWhite"
       android:textSize="20sp"
       android:textColor="#000000"/>
 
     <Button
+
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:text="Save"
+        android:textColor="@color/Biege"
         android:id="@+id/button_profile"
-        android:layout_marginTop="30dp"/>
+        android:layout_marginTop="30dp"
+        android:background="@color/DarkBlue" />
 
 
 

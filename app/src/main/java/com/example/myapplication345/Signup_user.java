@@ -62,6 +62,7 @@ public class Signup_user extends AppCompatActivity {
 
 
 
+
         btn2.setOnClickListener(new View.OnClickListener() {
 
 
@@ -92,7 +93,11 @@ public class Signup_user extends AppCompatActivity {
 
                 } else if (strphone.length() < 10) {
                     Toast.makeText(Signup_user.this, "Enter Valid Phone Number", Toast.LENGTH_SHORT).show();
-                } else if (strpasswd.equals("")) {
+                }
+                    else if (!strphone.matches(num)) {
+                        Toast.makeText(Signup_user.this, "Enter Valid Phone Number", Toast.LENGTH_SHORT).show();
+
+                    } else if (strpasswd.equals("")) {
                     Toast.makeText(Signup_user.this, "Enter Password", Toast.LENGTH_SHORT).show();
 
                 } else if (straddr.equals("")) {

@@ -15,6 +15,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 public class ProfileFragment extends Fragment {
 
@@ -34,8 +35,14 @@ CircleImageView circleImageView =  rootview.findViewById(R.id.profile_image) ;
         btn_profile.setOnClickListener((new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getActivity(), EditProfileFragment.class);
-                startActivity(intent);
+                /*Intent intent = new Intent(getActivity(), EditProfileFragment.class);
+                startActivity(intent);*/
+
+                Fragment editProfileFragment = new EditProfileFragment();
+                FragmentTransaction transaction = getFragmentManager().beginTransaction();
+                transaction.replace(R.id.profile_frag, editProfileFragment ); // give your fragment container id in first parameter
+                transaction.addToBackStack(null);  // if written, this transaction will be added to backstack
+                transaction.commit();
             }
 
         })

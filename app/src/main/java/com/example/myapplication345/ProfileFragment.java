@@ -1,6 +1,7 @@
 package com.example.myapplication345;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -33,9 +34,8 @@ CircleImageView circleImageView =  rootview.findViewById(R.id.profile_image) ;
         btn_profile.setOnClickListener((new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                {
-                    Toast.makeText(getContext(),"Saved Data Successfully",Toast.LENGTH_SHORT).show();
-                }
+                Intent intent = new Intent(getActivity(), EditProfileFragment.class);
+                startActivity(intent);
             }
 
         })

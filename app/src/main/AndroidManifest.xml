@@ -23,7 +23,9 @@
         <activity android:name=".Signup_user" />
         <activity android:name=".Signup"/>
         <activity android:name=".SplashActivity">
-            <intent-filter>
+
+
+        <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />

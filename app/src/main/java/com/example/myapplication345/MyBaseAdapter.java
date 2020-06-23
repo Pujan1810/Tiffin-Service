@@ -54,6 +54,7 @@ public class MyBaseAdapter extends BaseAdapter {
             @Override
             public void onClick(View v) {
                 String strData = dataModelArrayList.get(position).getStrLang();
+
                 Toast.makeText(context, ""+strData, Toast.LENGTH_SHORT).show();
             }
         });

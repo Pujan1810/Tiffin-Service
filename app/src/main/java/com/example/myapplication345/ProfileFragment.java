@@ -37,10 +37,12 @@ CircleImageView circleImageView =  rootview.findViewById(R.id.profile_image) ;
             public void onClick(View view) {
                 /*Intent intent = new Intent(getActivity(), EditProfileFragment.class);
                 startActivity(intent);*/
-
+                Bundle b = new Bundle();
+                b.putString("id", "Royal");
                 Fragment editProfileFragment = new EditProfileFragment();
+                editProfileFragment.setArguments(b);
                 FragmentTransaction transaction = getFragmentManager().beginTransaction();
-                transaction.replace(R.id.profile_frag, editProfileFragment ); // give your fragment container id in first parameter
+                transaction.replace(R.id.framelayout, editProfileFragment ); // give your fragment container id in first parameter
                 transaction.addToBackStack(null);  // if written, this transaction will be added to backstack
                 transaction.commit();
             }

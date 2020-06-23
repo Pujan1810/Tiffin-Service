@@ -1,5 +1,6 @@
 package com.example.myapplication345;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -95,10 +96,12 @@ public class Signup_client extends AppCompatActivity {
                 } else if (strccity.equals("")) {
                     Toast.makeText(Signup_client.this, "Enter the city", Toast.LENGTH_SHORT).show();
                 }
+
                 else {
-                    Toast.makeText(Signup_client.this, "Enter the city", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Signup_client.this, "Signed Up Successfully", Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(Signup_client.this,LoginActivity.class));
                 }
-                    finish();
+
             }
         });
     }

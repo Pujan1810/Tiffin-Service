@@ -27,6 +27,10 @@ public class EditProfileFragment extends Fragment {
         String edt_profile_addr = sharedPreferences.getString("User_addr","");
         String edt_profile_city = sharedPreferences.getString("User_city","");
 
+        Bundle idbundle = null;
+         idbundle = getArguments();
+        String myid = idbundle.getString("id");
+
 
         TextView edt_pr_uname = rootview.findViewById(R.id.edt_profile_uname);
         TextView edt_pr_email = rootview.findViewById(R.id.edt_profile_emailid);
@@ -36,7 +40,7 @@ public class EditProfileFragment extends Fragment {
         TextView edt_pr_city = rootview.findViewById(R.id.edt_profile_city);
 
 
-        edt_pr_uname.setText(edt_profile_fname);
+        edt_pr_uname.setText(myid);
         edt_pr_email.setText(edt_profile_emaild1);
         edt_pr_contact_no.setText(edt_profile_contact_no);
         // Pr_password.setText(profile_password);

@@ -29,20 +29,20 @@ public class ProfileFragment extends Fragment {
 CircleImageView circleImageView =  rootview.findViewById(R.id.profile_image) ;
                 circleImageView.setImageResource(R.drawable.ic_profile_default);
 
-        Button btn_profile = rootview.findViewById(R.id.button_profile);
+       TextView update_password = rootview.findViewById(R.id.pr_update_password);
 
 
-        btn_profile.setOnClickListener((new View.OnClickListener() {
+        update_password.setOnClickListener((new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 /*Intent intent = new Intent(getActivity(), EditProfileFragment.class);
                 startActivity(intent);*/
                 Bundle b = new Bundle();
                 b.putString("id", "Royal");
-                Fragment editProfileFragment = new EditProfileFragment();
-                editProfileFragment.setArguments(b);
+                Fragment updatePasswordFragment = new UpdatePasswordFragment();
+                updatePasswordFragment.setArguments(b);
                 FragmentTransaction transaction = getFragmentManager().beginTransaction();
-                transaction.replace(R.id.framelayout, editProfileFragment ); // give your fragment container id in first parameter
+                transaction.replace(R.id.framelayout, updatePasswordFragment ); // give your fragment container id in first parameter
                 transaction.addToBackStack(null);  // if written, this transaction will be added to backstack
                 transaction.commit();
             }
@@ -53,7 +53,7 @@ CircleImageView circleImageView =  rootview.findViewById(R.id.profile_image) ;
         String profile_fname = sharedPreferences.getString("User_uname","");
         String profile_emaild1 = sharedPreferences.getString("User_email1","");
         String profile_contact_no = sharedPreferences.getString("User_contact_no","");
-      //  String profile_password = sharedPreferences.getString("User_password","");
+        String profile_password = sharedPreferences.getString("User_password","");
         String profile_addr = sharedPreferences.getString("User_addr","");
         String profile_city = sharedPreferences.getString("User_city","");
 
@@ -61,7 +61,7 @@ CircleImageView circleImageView =  rootview.findViewById(R.id.profile_image) ;
         TextView Pr_uname = rootview.findViewById(R.id.profile_uname);
         TextView Pr_email = rootview.findViewById(R.id.profile_emailid);
         TextView Pr_contact_no = rootview.findViewById(R.id.profile_contact_no);
-       // TextView Pr_password = rootview.findViewById(R.id.profile_password);
+        TextView Pr_password = rootview.findViewById(R.id.profile_password);
         TextView Pr_addr = rootview.findViewById(R.id.profile_addr);
         TextView Pr_city = rootview.findViewById(R.id.profile_city);
 
@@ -69,7 +69,7 @@ CircleImageView circleImageView =  rootview.findViewById(R.id.profile_image) ;
         Pr_uname.setText(profile_fname);
         Pr_email.setText(profile_emaild1);
         Pr_contact_no.setText(profile_contact_no);
-       // Pr_password.setText(profile_password);
+        Pr_password.setText(profile_password);
         Pr_addr.setText(profile_addr);
         Pr_city.setText(profile_city);
 

@@ -57,12 +57,18 @@ public class UpdatePasswordFragment extends Fragment {
         update_password.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                SharedPreferences sharedPreferences = getActivity().getSharedPreferences("MyApplication345", Context.MODE_PRIVATE);
 
+                final String profile_password = sharedPreferences.getString("User_password","");
+                final String profile_email = sharedPreferences.getString("User_email1","");
 
                 if(str_password_email=="")
                 {
-                    edt_password_email.setError("Enter Old Password");
+                    edt_password_email.setError("Enter Email ID");
                 }
+
+
+
                 else if(str_old_password=="")
                 {
                         edt_old_password.setError("Enter Old Password");
@@ -77,16 +83,21 @@ public class UpdatePasswordFragment extends Fragment {
                 {
                     edt_new_confirm_password.setError("Confirm New Password");
                 }
-                else{
-                    loadUrlData(str_password_email,str_old_password,str_new_password,str_new_confirm_password);
+
+                /*else if(!str_password_email.equals(profile_email) )
+                {
+                    edt_password_email.setError("Enter correct email");
+                }*/
+
+                else if(str_old_password.equals(profile_password) && str_password_email.equals(profile_email)) {
+                    loadUrlData(str_password_email, str_old_password, str_new_password, str_new_confirm_password);
+
                     FragmentTransaction transaction = getFragmentManager().beginTransaction();
-                    transaction.replace(R.id.framelayout, editProfileFragment ); // give your fragment container id in first parameter
+                    transaction.replace(R.id.framelayout, editProfileFragment); // give your fragment container id in first parameter
                     transaction.addToBackStack(null);  // if written, this transaction will be added to backstack
                     transaction.commit();
                     Toast.makeText(getActivity(), "Changes saved successfully", Toast.LENGTH_SHORT).show();
                 }
-
-
             } private void loadUrlData(final String password_email,final String old_password,final String new_password,final String confirm_new_password)
                 {
                     final ProgressDialog progressDialog = new ProgressDialog(getActivity());

@@ -61,7 +61,18 @@
         android:textSize="15sp"
         android:fontFamily="sans-serif"
         android:textColor="@color/OffWhite"/>
-
+  <TextView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:id="@+id/pr_edit"
+      android:text="Edit"
+      />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/pr_update_password"
+        android:text="Update Password"
+        />
 
   </LinearLayout>
 
@@ -78,7 +89,7 @@
 
 
 
-  </LinearLayout>>
+  </LinearLayout>
 </LinearLayout>
 
   <ScrollView

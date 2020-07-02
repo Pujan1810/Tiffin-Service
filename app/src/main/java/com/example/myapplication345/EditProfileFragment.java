@@ -40,7 +40,7 @@ public class EditProfileFragment extends Fragment {
         String edt_profile_fname = sharedPreferences.getString("User_uname","");
         String edt_profile_emaild1 = sharedPreferences.getString("User_email1","");
         String edt_profile_contact_no = sharedPreferences.getString("User_contact_no","");
-        //  String profile_password = sharedPreferences.getString("User_password","");
+      //  String profile_password = sharedPreferences.getString("User_password","");
         String edt_profile_addr = sharedPreferences.getString("User_addr","");
         String edt_profile_city = sharedPreferences.getString("User_city","");
 

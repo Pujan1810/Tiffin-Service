@@ -113,6 +113,7 @@ public class LoginActivity extends AppCompatActivity {
                             String userName = dataObject.getString("userName");
                             String address = dataObject.getString("address");
                             String city = dataObject.getString("city");
+                            String password = dataObject.getString("password");
                             String emailId = dataObject.getString("emailId");
                             String phone = dataObject.getString("phone");
                             SharedPreferences sharedPreferences = getSharedPreferences("MyApplication345", Context.MODE_PRIVATE);
@@ -123,7 +124,9 @@ public class LoginActivity extends AppCompatActivity {
                             editor.putString("User_contact_no", phone);
                             editor.putString("User_addr", address);
                             editor.putString("User_city", city);
+                            editor.putString("User_password", password);
                             editor.commit();
+
 
                             Intent i = new Intent(LoginActivity.this, NavMain.class);
                             startActivity(i);

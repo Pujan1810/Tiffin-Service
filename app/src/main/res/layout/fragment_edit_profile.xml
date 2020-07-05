@@ -111,7 +111,7 @@
         android:layout_marginTop="40dp"
         android:background="@color/DarkBlue" />
 
-    <TextView
+    <!--<TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="17dp"
@@ -122,7 +122,7 @@
         android:textSize="20sp"
         android:id="@+id/edt_profile_password"
         android:textStyle="bold"
-        android:textColor="#E91E63"/>
+        android:textColor="#E91E63"/>-->
 
 
 </LinearLayout>

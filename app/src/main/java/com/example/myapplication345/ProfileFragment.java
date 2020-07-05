@@ -30,6 +30,19 @@ CircleImageView circleImageView =  rootview.findViewById(R.id.profile_image) ;
                 circleImageView.setImageResource(R.drawable.ic_profile_default);
 
        TextView update_password = rootview.findViewById(R.id.pr_update_password);
+       TextView edit_profile = rootview.findViewById(R.id.pr_edit);
+
+
+        edit_profile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Fragment editProfileFragment = new EditProfileFragment();
+                FragmentTransaction transaction = getFragmentManager().beginTransaction();
+                transaction.replace(R.id.framelayout, editProfileFragment);
+                transaction.addToBackStack(null);
+                transaction.commit();
+            }
+        });
 
 
         update_password.setOnClickListener((new View.OnClickListener() {

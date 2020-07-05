@@ -24,7 +24,7 @@ public class EditProfileFragment extends Fragment {
         TextView edt_pr_password =  rootview.findViewById(R.id.edt_profile_password);
         String edt_profile_password = edt_pr_password.getText().toString();
         final Fragment updatePasswordFragment = new UpdatePasswordFragment();
-        edt_pr_password.setOnClickListener(new View.OnClickListener() {
+        /*edt_pr_password.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 FragmentTransaction transaction = getFragmentManager().beginTransaction();
@@ -32,7 +32,7 @@ public class EditProfileFragment extends Fragment {
                 transaction.addToBackStack(null);  // if written, this transaction will be added to backstack
                 transaction.commit();
             }
-        });
+        });*/
 
 
 
